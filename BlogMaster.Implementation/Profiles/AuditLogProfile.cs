@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BlogMaster.Application.DTO.Log;
+using BlogMaster.Application.DTO.Audit;
 using BlogMaster.Domain;
 using System;
 using System.Collections.Generic;

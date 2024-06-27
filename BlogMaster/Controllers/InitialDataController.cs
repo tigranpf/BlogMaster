@@ -1,11 +1,6 @@
-﻿using Azure;
-using BlogMaster.DataAccess;
+﻿using BlogMaster.DataAccess;
 using BlogMaster.Domain;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BlogMaster.API.Controllers
 {
@@ -14,7 +9,6 @@ namespace BlogMaster.API.Controllers
     [ApiExplorerSettings(IgnoreApi = true)]
     public class InitialDataController : ControllerBase
     {
-
         private BMContext _context;
 
         public InitialDataController(BMContext context)           
@@ -74,9 +68,6 @@ namespace BlogMaster.API.Controllers
                 }
             }
 
-
-            
-
             List<Image> images = new List<Image>
                 {
                     new Image { Path = "photo1.jpg", Description = "Image description 1" },
@@ -133,7 +124,6 @@ namespace BlogMaster.API.Controllers
                 }
             }
 
-
             List<Reaction> reactions = new List<Reaction>
                 {
                     new Reaction{Title="Like",Image=images.ElementAt(5),CreatedAt=DateTime.UtcNow},
@@ -177,9 +167,6 @@ namespace BlogMaster.API.Controllers
                     new BlogPostReaction{BlogPost=blogPosts.ElementAt(2), Reaction=reactions.ElementAt(2), User=users.ElementAt(3)},                  
                 };
 
-
-
-
             List<Comment> comments = new List<Comment>
                 {
                     new Comment{BlogPost=blogPosts.First(), Text="Great Article, I really like it",User=users.First(),},
@@ -196,7 +183,6 @@ namespace BlogMaster.API.Controllers
                     new Comment{BlogPost=blogPosts.ElementAt(2), Text="Really??",User=users.ElementAt(3),Parent=comments.ElementAt(2)},
                 };
 
-
             _context.Tags.AddRange(tags);
             _context.Images.AddRange(images);
             _context.Roles.AddRange(roles);
@@ -208,10 +194,8 @@ namespace BlogMaster.API.Controllers
             _context.BlogPostTags.AddRange(blogPostTags);
             _context.Comments.AddRange(comments);
             _context.Comments.AddRange(childrenComments);
-
             _context.RoleUseCases.AddRange(roleUseCases);
             _context.UserUseCases.AddRange(allUsersUseCase);
-
             _context.SaveChanges();
 
             return Ok();

@@ -14,9 +14,9 @@ using BlogMaster.Implementation.UseCases.Commands.EntityFramework.Tags;
 using BlogMaster.Implementation.UseCases.Commands.EntityFramework.UseCases;
 using BlogMaster.Implementation.UseCases.Commands.EntityFramework.UserCommands;
 using BlogMaster.Implementation.UseCases.Queries.EntityFramework.BlogPostQueries;
-using BlogMaster.Implementation.UseCases.Queries.EntityFramework.Logs;
 using BlogMaster.Implementation.UseCases.Queries.EntityFramework.Users;
 using BlogMaster.Implementation.Validators;
+using BlogMaster.Implementation.UseCases.Queries.EntityFramework.AuditLogs;
 
 namespace BlogMaster.API.Extensions
 {
